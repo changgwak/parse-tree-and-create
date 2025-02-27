@@ -48,8 +48,8 @@ def get_depth(line: str) -> int:
 def extract_raw_string(line: str) -> str:
     """
     해당 줄에서 실제 경로(폴더/파일) 부분만 잘라내어 반환.
-    예) '│   ├── catkin_cartographer/catkin_cartographer/src'
-     -> 'catkin_cartographer/catkin_cartographer/src'
+    예) '│   ├── catkin_carto/catkin_carto/src'
+     -> 'catkin_carto/catkin_carto/src'
     """
     s = line.strip()
     if s == '.':
@@ -69,7 +69,7 @@ def extract_raw_string(line: str) -> str:
 def split_path_into_tokens(raw: str) -> list[str]:
     """
     슬래시('/')로 구분된 복합 경로를 토큰 리스트로 분할.
-    예: 'catkin_cartographer/catkin_cartographer/src' -> ['catkin_cartographer','catkin_cartographer','src']
+    예: 'catkin_carto/catkin_carto/src' -> ['catkin_carto','catkin_carto','src']
     예: '.' -> ['.']
     """
     if raw == '.':
